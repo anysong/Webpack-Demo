@@ -7,11 +7,27 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     module: {
-        rules: [{
+        rules: [
+        //样式
+        {
             test: /\.css$/,
             use: [
                 'style-loader',
                 'css-loader'
+            ]
+        },
+        //图片
+        {
+            test: /\.(png|svg|jpg|gif)$/,
+            use: [
+                'file-loader'
+            ]
+        },
+        //字体
+        {
+            test: /\.(woff|woff2|eot|ttf|otf)$/,
+            use: [
+                'file-loader'
             ]
         }]
     }
